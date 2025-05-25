@@ -1,21 +1,17 @@
 import streamlit as st
 import base64
 
-# Codifica a imagem em base64
-image_path = "img/itau-light.png"
-with open(image_path, "rb") as img_file:
-    img_base64 = base64.b64encode(img_file.read()).decode()
-
-# Estilização Header
-st.markdown(f"""
+# Estilização
+st.markdown("""
     <style>
-        /* Ajustar o fundo e o tamanho da block-container */
-        .block-container {{
-            width: 100% !important; /* Preenche toda a largura */
-            max-width: 100% !important; /* Garante que não haja limite de largura */
-            height: 100% !important;
-            max-height: 100% !important;
-        }}
+        .block-container {
+            padding-top: 0;
+            width: 60% !important;
+            max-width: 60% !important;
+            height: 40% !important;
+            max-height: 40% !important;
+        }
+    </style>
 """, unsafe_allow_html=True)
 
 st.title("PÁGINA DE INSERÇÃO DE LOG")

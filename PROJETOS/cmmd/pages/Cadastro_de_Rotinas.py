@@ -75,10 +75,12 @@ if not st.session_state.cadastro_realizado:
             df_log.to_excel(path_arquivo, index=False, engine="openpyxl")
 
         # Atualiza JSON
-        json_file = r"C:\Users\dgsou\Desktop\GITHUB\DADOS\PROJETOS\cmmd\dados\dados_rotinas.json"
-        if os.path.exists(json_file):
+        pasta_dados = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dados")
+        os.makedirs(pasta_dados, exist_ok=True)
+        path_arquivo = os.path.join(pasta_dados, "dados_rotinas.json")
+        if os.path.exists(path_arquivo):
             try:
-                with open(json_file, "r") as file:
+                with open(path_arquivo, "r") as file:
                     dados_existentes = json.load(file)
             except json.JSONDecodeError:
                 dados_existentes = []
@@ -87,7 +89,7 @@ if not st.session_state.cadastro_realizado:
 
         dados_existentes.append(novo_registro)
 
-        with open(json_file, "w") as file:
+        with open(path_arquivo, "w") as file:
             json.dump(dados_existentes, file, indent=4)
 
         st.session_state.cadastro_realizado = True

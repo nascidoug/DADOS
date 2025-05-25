@@ -241,5 +241,14 @@
         "Coordenacao": "Fraude PF",
         "Gerencia": "Prevencao a Fraude",
         "Path": "C:\\Users\\dgsou\\Desktop\\GITHUB\\DADOS\\PROJETOS\\cmmd\\pages\\..\\dados\\logs\\Reaverbacao_em_Lote_INSS_log.xlsx"
+    },
+    {
+        "Nome da Rotina": "Inconsistencia_407",
+        "Frequencia": "Diario",
+        "Analista Responsavel": "Lucas Martins",
+        "Email Analista Responsavel": "lucas.martins@bancox.com",
+        "Coordenacao": "Analise PF",
+        "Gerencia": "Analise de Credito",
+        "Path": "C:\\Users\\dgsou\\Desktop\\GITHUB\\DADOS\\PROJETOS\\cmmd\\pages\\..\\dados\\logs\\Inconsistencia_407_log.xlsx"
     }
 ]

@@ -7,8 +7,9 @@
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 from data_loader import DataLoader
-from utils import DataProcessor
+from data_process import DataProcessor
 from renderer import Renderer
+import os
 
 #Define o layout da tela (largura total) e a frequência de atualização da página (6000milisegundos = 6 segundos)
 st.set_page_config(layout="wide")
@@ -17,7 +18,8 @@ st_autorefresh(interval=6000, limit=None, key="autorefresh")
 st.title("📊 Página Principal - Command Center")
 
 #Define um arquivo para um arquivo json (cadastro de rotinas) e executa o carregamento dos dados a partir da classe DataLoader
-json_path = r"C:\Users\dgsou\Desktop\GITHUB\DADOS\PROJETOS\cmmd\dados\dados_rotinas.json"
+current_dir = os.path.dirname(__file__)  # Caminho onde o script está
+json_path = os.path.join(current_dir, "dados", "dados_rotinas.json")
 data_loader = DataLoader(json_path)
 rotinas = data_loader.rotinas
 
